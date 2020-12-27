@@ -12,7 +12,7 @@
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="./profile.php"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="./cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="./cart_view.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<?php
             if(isset($_SESSION['user'])){
               $image = (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg';

@@ -15,12 +15,14 @@
   <?php include 'includes/menubar.php'; ?>
 
   <div class="content-wrapper">
+  <div class="container">
+
     <section class="content-header">
       <h1>
         Product List
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <ol class=" nav nav-bar breadcrumb">
+        <li><a href="home.php">Home</a></li>
         <li>Products</li>
         <li class="active">Product List</li>
       </ol>
@@ -132,14 +134,13 @@
         </div>
       </div>
     </section>
-     
+  </div> 
   </div>
   	<?php include 'includes/footer.php'; ?>
     <?php include 'includes/products_modal.php'; ?>
     <?php include 'includes/products_modal2.php'; ?>
 
 </div>
-<!-- ./wrapper -->
 
 <?php include 'includes/scripts.php'; ?>
 <script>

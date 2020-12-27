@@ -18,12 +18,14 @@
   <?php include 'includes/menubar.php'; ?>
 
   <div class="content-wrapper">
+  <div class="container">
+
     <section class="content-header">
       <h1>
         Dashboard
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <ol class="nav nav-bar breadcrumb">
+        <li><a href="home.php"></i>Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -97,7 +99,7 @@
   	<?php include 'includes/footer.php'; ?>
 
 </div>
-
+</div>
 <?php $pdo->close(); ?>
 <?php include 'includes/scripts.php'; ?>
 <script>

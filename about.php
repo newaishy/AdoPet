@@ -10,7 +10,7 @@
 	<div id="contact-page" class="container">
     	<div class="bg">   	
     		<div class="row">  	
-	    		<div class="center" align="center">
+	    		<div align="center">
 	    			<div class="contact-info">
 	    				<h2 class="title text-center">About Us</h2>
 	    					<p>Fiverr is an online marketplace that is changing how the world works together. 

@@ -1,12 +1,12 @@
 <?php include 'includes/session.php'; ?>
 <?php
   if(isset($_SESSION['user'])){
-    header('location: cart_view.php');
+    header('location: index.php');
   }
 ?>
 <?php include 'includes/header.php'; ?>
 <body>
-<div class="login-form col-sm-5" >
+<div class="signup-form col-sm-5" >
   	<?php
       if(isset($_SESSION['error'])){
         echo "
@@ -27,7 +27,7 @@
     ?>
 <h2>Login to your account</h2>
     	<form action="verify.php" method="POST">
-      		<div class="form-group has-feedback">
+          <div class="form-group has-feedback">
         		<input type="email" class="form-control" name="email" placeholder="Email" required>
         		<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       		</div>

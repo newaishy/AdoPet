@@ -1381,21 +1381,14 @@ h2.title {
     overflow: hidden;
 }
 
-.login-form {background: #F0F0E9;
-    border: medium none;
-    color: #696763;
-    display: block;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    height: 40px;
-    margin-bottom: 10px;
-    outline: medium none;
-    padding-left: 10px;
-    width: 100%;
-    margin-left: 25%;}
+.login-form {}
 
 .signup-form {}
+
+  .glyphicon {
+    display: inline !important;
+    display: block;
+  }
 
 .login-form h2,
 .signup-form h2 {
@@ -1406,7 +1399,7 @@ h2.title {
     margin-bottom: 30px;
 }
 
-.login-form .form ,
+.login-form form ,
 .signup-form form input {
     background: #F0F0E9;
     border: medium none;

@@ -12,9 +12,21 @@
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="./profile.php"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="./checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="./cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="./login.php"><i class="fa fa-lock"></i> Login</a></li>
+								<?php
+            if(isset($_SESSION['user'])){
+              $image = (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg';
+              echo "
+			  <li><a href='logout.php'>Logout</a></li>
+			";
+            }
+            else{
+              echo "
+                <li><a href='login.php'>Login</a></li>
+                <li><a href='signup.php'>SignUp</a></li>
+              ";
+            }
+          ?>
 							</ul>
 						</div>
 					</div>
@@ -119,10 +131,17 @@
 							</ul>
 						</div>
 					</div>
+
+
 					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
+					<form method="POST" class="navbar-form navbar-right" action="search.php">
+          <div class="input-group">
+              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Product" required>
+              <span class="input-group-btn" id="searchBtn" >
+                  <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i> </button>
+              </span>
+          </div>
+        </form>
 					</div>
 				</div>
 			</div>

@@ -3,7 +3,6 @@
 
 	$conn = $pdo->open();
 
-	if(isset($_POST['edit'])){
 		$curr_password = $_POST['curr_password'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -42,10 +41,7 @@
 		else{
 			$_SESSION['error'] = 'Incorrect password';
 		}
-	}
-	else{
-		$_SESSION['error'] = 'Fill up edit form first';
-	}
+	
 
 	$pdo->close();
 

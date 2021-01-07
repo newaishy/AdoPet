@@ -1,7 +1,9 @@
 <?php
 	include 'includes/session.php';
+	
 
 	if(isset($_POST['signup'])){
+
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
 		$email = $_POST['email'];
@@ -36,6 +38,7 @@
 				try{
 					$stmt = $conn->prepare("INSERT INTO users (email, password, firstname, lastname, created_on) VALUES (:email, :password, :firstname, :lastname, :now)");
 					$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'now'=>$now]);
+					$userid = $conn->lastInsertId();
 				}
 				catch(PDOException $e){
 					$_SESSION['error'] = $e->getMessage();

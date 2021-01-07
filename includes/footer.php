@@ -55,7 +55,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="logo pull-right">
-							<a href="index.html"><img src="images/footer/logo.png" alt="" /></a>
+							<a href="index.php"><img src="images/footer/logo.png" alt="" /></a>
 							<p>Smart Village - B 2401 - 6 October - Egypt</p>
 						</div>
 					</div>

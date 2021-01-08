@@ -1,13 +1,51 @@
-<!-- Add -->
-<div class="modal fade" id="profile">
-    <div class="modal-dialog">
-        <div class="modal-content">
-          	<div class="modal-header">
-            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Admin Profile</b></h4>
-          	</div>
-          	<div class="modal-body">
+
+  <?php include 'includes/session.php'; ?>
+<?php
+  if(!isset($_SESSION['admin'])){
+    header('location: login.php');
+  }
+?>
+<?php include 'includes/header.php'; ?>
+<body>
+<div class="wrapper">
+<div class="header-middle">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 clearfix">
+						<div class="logo pull-left">
+							<a href="index.php"><img src="images/logo.png" alt="Adopet" /></a>
+						</div>
+
+					</div>
+					<div class="col-md-8 clearfix">
+						<div class="shop-menu clearfix pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="./profile.php"><i class="fa fa-user"></i> Account</a></li>
+								<li><a href="./cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<?php
+            if(isset($_SESSION['user'])){
+              $image = (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg';
+              echo "
+			  <li><a href='logout.php'>Logout</a></li>
+			";
+            }
+            else{
+              echo "
+                <li><a href='login.php'>Login</a></li>
+                <li><a href='signup.php'>SignUp</a></li>
+              ";
+            }
+          ?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="content-wrapper">
+<div class="container">
+<div class="signup-form" id="edit">
+              <h4 class="title"><b>Update Account</b></h4>
             	<form class="form-horizontal" method="POST" action="profile_update.php?return=<?php echo basename($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
           		  <div class="form-group">
                   	<label for="email" class="col-sm-3 control-label">Email</label>
@@ -49,15 +87,20 @@
                     <label for="curr_password" class="col-sm-3 control-label">Current Password:</label>
 
                     <div class="col-sm-9">
-                      <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="input current password to save changes" required>
+                      <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="Type password to save changes" required>
                     </div>
                 </div>
-          	</div>
-          	<div class="modal-footer">
-            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-            	<button type="submit" class="btn btn-success btn-flat" name="save"><i class="fa fa-check-square-o"></i> Save</button>
+
+            <button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>
+              <p></p>
+              <button type="submit" class="btn btn-success btn-flat pull-right" name="save"><i class="fa fa-check-square-o"></i> Update</button>
             	</form>
-          	</div>
+              </div>
         </div>
     </div>
+<hr>
+<?php include 'includes/footer.php'; ?>
+</div>	
 </div>
+</body>
+</html>

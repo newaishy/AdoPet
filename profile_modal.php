@@ -1,7 +1,7 @@
 <?php include 'includes/session.php'; ?>
 <?php
-  if(isset($_SESSION['user'])){
-    header('location: index.php');
+  if(!isset($_SESSION['user'])){
+    header('location: login.php');
   }
 ?>
 <?php include 'includes/header.php'; ?>
@@ -43,15 +43,8 @@
 		</div>
 <div class="content-wrapper">
 <div class="container">
-<div class="modal fade" id="edit">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Update Account</b></h4>
-            </div>
-            <div class="modal-body">
+<div class="signup-form" id="edit">
+              <h4 class="title"><b>Update Account</b></h4>
               <form class="form-horizontal" method="POST" action="profile_edit.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">Firstname</label>
@@ -103,7 +96,6 @@
                     </div>
                 </div>
                 <hr>
-                
                 <div class="form-group">
                     <label for="curr_password" class="col-sm-3 control-label">Current Password</label>
 
@@ -111,17 +103,13 @@
                       <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="input current password to save changes" required>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+              <button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>
+              <p></p>
+              <button type="submit" class="btn btn-success btn-flat pull-right" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
               </form>
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>	
 <hr>
 <?php include 'includes/footer.php'; ?>
 </div>	

@@ -11,7 +11,7 @@
 					<div class="col-sm-7">
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<a href="http://localhost:8080/AdoPet/adopt.php?category=Cats">
+								<a href="http://localhost:8080/AdoPet/category.php?category=Cats">
 									<div>
 										<img src="images/footer/cats.png" alt="" />
 									</div>
@@ -22,7 +22,7 @@
 						
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<a href="http://localhost:8080/AdoPet/adopt.php?category=Dogs">
+								<a href="http://localhost:8080/AdoPet/category.php?category=Dogs">
 									<div>
 										<img src="images/footer/dogs.png" alt="" />
 									</div>
@@ -33,7 +33,7 @@
 						
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<a href="http://localhost:8080/AdoPet/adopt.php?category=Birds">
+								<a href="http://localhost:8080/AdoPet/category.php?category=Birds">
 									<div>
 										<img src="images/footer/birds.png" alt="" />
 									</div>
@@ -44,7 +44,7 @@
 						
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<a href="http://localhost:8080/AdoPet/adopt.php?category=Fish">
+								<a href="http://localhost:8080/AdoPet/category.php?category=Fish">
 									<div>
 										<img src="images/footer/fish.png" alt="" />
 									</div>

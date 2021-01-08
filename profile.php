@@ -51,7 +51,7 @@
 	        						<div class="col-sm-9">
 	        							<h4><?php echo $user['firstname'].' '.$user['lastname']; ?>
 	        								<span class="pull-right">
-	        									<a href="/profile_modal.php" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
+	        									<a href="profile_modal.php" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
 	        								</span>
 	        							</h4>
 	        							<h4><?php echo $user['email']; ?></h4>
@@ -71,7 +71,6 @@
 	  </div>
   
   	<?php include 'includes/footer.php'; ?>
-  	<?php include '/profile_modal.php'; ?>
 </div>
 </body>
 </html>

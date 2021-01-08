@@ -11,7 +11,7 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Update Account</a></li>
+								<li><a href="./profile_modal" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Update Account</a></li>
 								<li><a href="../logout.php" class="btn btn-default btn-flat">Sign out</a></li>
 							</ul>
 						</div>

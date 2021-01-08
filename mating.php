@@ -65,15 +65,12 @@
 
 		       		?> 
 	        	</div>
-	        <!--	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div> -->
 	        </div>
 	      </section>
 	     
 	    </div>
 	  </div>
-  
+  <hr>
   	<?php include 'includes/footer.php'; ?>
 </div>
 </body>

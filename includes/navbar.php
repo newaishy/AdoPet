@@ -47,7 +47,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="./index.php" class="active">Home</a></li>
+								<li><a href="./index.php" ><i class="fa fa-home"></i>Home</a></li>
 
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Adopt </a>

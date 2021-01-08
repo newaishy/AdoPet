@@ -96,18 +96,11 @@
       </div>
       </section>
     </div>
+    <hr>
   	<?php include 'includes/footer.php'; ?>
 
 </div>
 </div>
 <?php $pdo->close(); ?>
-<?php include 'includes/scripts.php'; ?>
-<script>
-$(function(){
-  $('#select_year').change(function(){
-    window.location.href = 'home.php?year='+$(this).val();
-  });
-});
-</script>
 </body>
 </html>

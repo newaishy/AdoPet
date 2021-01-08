@@ -51,6 +51,8 @@
 
 		}
 
+		header('location: index.php');
+
 	}
 	else{
 		$_SESSION['error'] = 'Fill up signup form first';

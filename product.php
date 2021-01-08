@@ -82,7 +82,7 @@
 		            	</div>
 		            </div>
 		            <br>
-				    <div class="fb-comments" data-href="http://localhost/ecommerce/product.php?product=<?php echo $name; ?>" data-numposts="10" width="100%"></div> 
+				    <div class="fb-comments" data-href="http://localhost/AdoPet/product.php?product=<?php echo $name; ?>" data-numposts="10" width="100%"></div> 
 	        	</div>
 	        </div>
 	      </section>

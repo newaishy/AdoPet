@@ -20,7 +20,7 @@
 
 		$pdo->close();
 	}
-	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60)) {
+	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
 		session_unset(); 
 		session_destroy(); 
 		echo '<script>alert("You have been signed out!");window.location.href = "login.php";</script>';

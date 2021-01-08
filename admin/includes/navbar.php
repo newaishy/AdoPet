@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.php"><img src="../images/logo.png" alt="" /></a>
+							<a href="home.php"><img src="../images/logo.png" alt="" /></a>
 						</div>
 
 					</div>

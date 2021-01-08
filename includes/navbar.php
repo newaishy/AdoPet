@@ -16,7 +16,7 @@
             if(isset($_SESSION['user'])){
               $image = (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg';
               echo "
-			  <li><a href="./profile.php"><i class="fa fa-user"></i> Account</a></li>
+			  <li><a href='./profile.php'>Account</a></li>
 			";
             }
           ?>

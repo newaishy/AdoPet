@@ -1,4 +1,3 @@
-
   <?php include 'includes/session.php'; ?>
 <?php
   if(!isset($_SESSION['admin'])){
@@ -13,9 +12,9 @@
 		</div>
 <div class="content-wrapper">
 <div class="container">
-<div class="signup-form" id="addnew">
-              <h4 class="modal-title"><b>Add New User</b></h4>
-              <form class="form-horizontal" method="POST" action="users_add.php" enctype="multipart/form-data">
+<div class="signup-form" id="delete">
+          <h4 class="modal-title"><b>Deleting...</b></h4>
+            <form class="form-horizontal" method="POST" action="users_delete.php">
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
 
@@ -65,9 +64,9 @@
                       <input type="file" id="photo" name="photo">
                     </div>
                 </div>
-			      	<button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>
+				<button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>
               <p></p>
-              <button type="submit" class="btn btn-success btn-flat pull-right" name="add"><i class="fa fa-check-square-o"></i> Add</button>
+              <button type="submit" class="btn btn-success btn-flat pull-right" name="delete"><i class="fa fa-trash"></i> Delete</button>
             	</form>
 </div>
 </div>

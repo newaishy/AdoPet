@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+              <a href="users_add_modal.php" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
@@ -100,8 +100,6 @@
      
   </div>
   	<?php include 'includes/footer.php'; ?>
-    <?php include 'includes/users_modal.php'; ?>
-
 </div>
 <script>
 $(function(){

@@ -1,4 +1,4 @@
-  <?php include 'includes/session.php'; ?>
+<?php include 'includes/session.php'; ?>
 <?php
   if(!isset($_SESSION['admin'])){
     header('location: login.php');
@@ -14,15 +14,15 @@
 <div class="container">
 <div class="signup-form" id="delete">
           <h4 class="modal-title"><b>Deleting...</b></h4>
-          <form class="form-horizontal" method="POST" action="users_delete.php">
-                <input type="hidden" class="userid" name="id">
+          <form class="form-horizontal" method="POST" action="products_delete.php">
+                <input type="hidden" class="prodid" name="id">
                 <div class="text-center">
-                    <p>DELETE USER</p>
-                    <h2 class="bold fullname"></h2>
+                    <p>DELETE PRODUCT</p>
+                    <h2 class="bold name"></h2>
                 </div>
 				<button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>
               <p></p>
-              <button type="submit" class="btn btn-success btn-flat pull-right" name="delete"><i class="fa fa-trash"></i> Delete</button>
+              <button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> Delete</button>
             	</form>
 </div>
 </div>

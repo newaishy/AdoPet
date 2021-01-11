@@ -55,7 +55,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a>
+              <a href="products_add_modal.php" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a>
               <div class="pull-right">
                 <form class="form-inline">
                   <div class="form-group">
@@ -108,14 +108,16 @@
                             <td>".$row['name']."</td>
                             <td>
                               <img src='".$image."' height='30px' width='30px'>
-                              <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
+                              <span class='pull-right'><a href='products_photo_modal.php' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
                             </td>
-                            <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
+                            <td><a href='products_desc_modal.php' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
                             <td>&#36; ".number_format($row['price'], 2)."</td>
                             <td>".$counter."</td>
                             <td>
-                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
-                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
+                            <a href='products_edit_modal.php' data-id='".$row['id']."' class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i>Edit</a>   
+                            
+                            <a href='products_delete_modal.php' data-id='".$row['id']."' class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a> 
+          
                             </td>
                           </tr>
                         ";
@@ -137,63 +139,10 @@
   </div> 
   </div>
   	<?php include 'includes/footer.php'; ?>
-    <?php include 'includes/products_modal.php'; ?>
-    <?php include 'includes/products_modal2.php'; ?>
 
 </div>
 
 <script>
-$(function(){
-  $(document).on('click', '.edit', function(e){
-    e.preventDefault();
-    $('#edit').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
-
-  $(document).on('click', '.delete', function(e){
-    e.preventDefault();
-    $('#delete').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
-
-  $(document).on('click', '.photo', function(e){
-    e.preventDefault();
-    var id = $(this).data('id');
-    getRow(id);
-  });
-
-  $(document).on('click', '.desc', function(e){
-    e.preventDefault();
-    var id = $(this).data('id');
-    getRow(id);
-  });
-
-  $('#select_category').change(function(){
-    var val = $(this).val();
-    if(val == 0){
-      window.location = 'products.php';
-    }
-    else{
-      window.location = 'products.php?category='+val;
-    }
-  });
-
-  $('#addproduct').click(function(e){
-    e.preventDefault();
-    getCategory();
-  });
-
-  $("#addnew").on("hidden.bs.modal", function () {
-      $('.append_items').remove();
-  });
-
-  $("#edit").on("hidden.bs.modal", function () {
-      $('.append_items').remove();
-  });
-
-});
 
 function getRow(id){
   $.ajax({

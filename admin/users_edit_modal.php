@@ -15,53 +15,47 @@
 <div class="signup-form" id="edit">
 <h4 class="modal-title"><b>Edit User</b></h4>
 <form class="form-horizontal" method="POST" action="users_edit.php">
+                <input type="hidden" class="userid" name="id">
                 <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <label for="edit_email" class="col-sm-3 control-label">Email</label>
 
                     <div class="col-sm-9">
-                      <input type="email" class="form-control" id="email" name="email" required>
+                      <input type="email" class="form-control" id="edit_email" name="email">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <label for="edit_password" class="col-sm-3 control-label">Password</label>
 
                     <div class="col-sm-9">
-                      <input type="password" class="form-control" id="password" name="password" required>
+                      <input type="password" class="form-control" id="edit_password" name="password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="firstname" name="firstname" required>
+                      <input type="text" class="form-control" id="edit_firstname" name="firstname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="lastname" name="lastname" required>
+                      <input type="text" class="form-control" id="edit_lastname" name="lastname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address" class="col-sm-3 control-label">Address</label>
+                    <label for="edit_address" class="col-sm-3 control-label">Address</label>
 
                     <div class="col-sm-9">
-                      <textarea class="form-control" id="address" name="address"></textarea>
+                      <textarea class="form-control" id="edit_address" name="address"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Contact Info</label>
+                    <label for="edit_contact" class="col-sm-3 control-label">Contact Info</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="contact" name="contact">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo</label>
-
-                    <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo">
+                      <input type="text" class="form-control" id="edit_contact" name="contact">
                     </div>
                 </div>
 				<button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>

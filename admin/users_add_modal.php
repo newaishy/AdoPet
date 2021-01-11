@@ -72,7 +72,7 @@
 </div>
 </div>
 </div>
-              <hr>
+<hr>
 <?php include 'includes/footer.php'; ?>
 </body>
 </html>

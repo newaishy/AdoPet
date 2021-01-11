@@ -4,8 +4,6 @@
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
-	<?php include 'cart_fetch.php'; ?>
-
 	 
 	  <div class="content-wrapper">
 	    <div class="container">

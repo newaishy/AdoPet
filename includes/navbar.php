@@ -100,31 +100,6 @@
 									?>
 									</ul>
           						</li>
-
-								  <li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Mating </a>
-									<ul class="sub-menu" role="menu">
-									<?php
-									
-										$conn = $pdo->open();
-										try{
-										$stmt = $conn->prepare("SELECT * FROM category");
-										$stmt->execute();
-										foreach($stmt as $row){
-											echo "
-											<li><a href='mating.php?category=".$row['name']."'>".$row['name']."</a></li>
-											";                  
-										}
-										}
-										catch(PDOException $e){
-										echo "There is some problem in connection: " . $e->getMessage();
-										}
-
-										$pdo->close();
-
-									?>
-									</ul>
-          						</li>
 								
 								<li><a href="./vets.php">Vets</a></li> 
 								<li><a href="./about.php">About</a></li>

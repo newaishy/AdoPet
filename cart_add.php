@@ -16,7 +16,8 @@
 			try{
 				$stmt = $conn->prepare("INSERT INTO cart (user_id, product_id, quantity) VALUES (:user_id, :product_id, :quantity)");
 				$stmt->execute(['user_id'=>$user['id'], 'product_id'=>$id, 'quantity'=>$quantity]);
-				$output['message'] = 'Item added to cart';
+				//$output['message'] = 'Item added to cart';
+				header('location: cart_view.php');
 				
 			}
 			catch(PDOException $e){
@@ -26,7 +27,8 @@
 		}
 		else{
 			$output['error'] = true;
-			$output['message'] = 'Product already in cart';
+			//$output['message'] = 'Product already in cart';
+			echo '<script>alert("Product already in cart");window.location.href = "cart_view.php";</script>';
 		}
 	}
 	else{

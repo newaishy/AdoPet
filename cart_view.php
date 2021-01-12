@@ -29,12 +29,7 @@
 	        			</div>
 	        		</div>
 	        		<?php
-	        			if(isset($_SESSION['user'])){
-	        				echo "
-	        					<div id='paypal-button'></div>
-	        				";
-	        			}
-	        			else{
+	        			if(!isset($_SESSION['user'])){
 	        				echo "
 	        					<h4>You need to <a href='login.php'>Login</a> to checkout.</h4>
 	        				";

@@ -70,14 +70,14 @@
                           <tr>
                             <td>
                               <img src='".$image."' height='30px' width='30px'>
-                              <span class='pull-right'><a href='users_photo_modal.php' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
+                              <span class='pull-right'><a href='users_photo_modal.php?id=".$row['id']."' class='photo' data-toggle='modal'><i class='fa fa-edit'></i></a></span>
                             </td>
                             <td>".$row['email']."</td>
                             <td>".$row['firstname'].' '.$row['lastname']."</td>
                             <td>
-                            <a href='users_edit_modal.php' data-id='".$row['id']."' class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i>Edit</a>   
+                            <a href='users_edit_modal.php?id=".$row['id']."' class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i>Edit</a>   
                             
-                            <a href='users_delete_modal.php' data-id='".$row['id']."' class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a> 
+                            <a href='users_delete_modal.php?id=".$row['id']."' class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a> 
                           
                             </td>
                           </tr>

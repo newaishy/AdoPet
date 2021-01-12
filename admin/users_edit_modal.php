@@ -32,7 +32,7 @@ $stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
 <div class="signup-form" id="edit">
 <h4 class="modal-title"><b>Edit User</b></h4>
 <form class="form-horizontal" method="POST" action="users_edit.php">
-                <input type="hidden" class="userid" name="id">
+                <input type="hidden" class="userid" name="id" value="<?php echo $id;?>">
                 <div class="form-group">
                     <label for="edit_email" class="col-sm-3 control-label">Email</label>
 

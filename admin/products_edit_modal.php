@@ -14,6 +14,7 @@ $stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
       $category = $product['category_id'];
       $price = $product['price'];
       $description = $product['description'];
+      $catid = $category;
 
 
 ?>
@@ -34,7 +35,7 @@ $stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
 <div class="signup-form" id="edit">
 <h4 class="modal-title"><b>Edit Product</b></h4>
               <form class="form-horizontal" method="POST" action="products_edit.php">
-                <input type="hidden" class="prodid" name="id">
+                <input type="hidden" class="prodid" name="id" value="<?php echo $id;?>">
                 <div class="form-group">
                   <label for="edit_name" class="col-sm-1 control-label">Name</label>
 
@@ -45,7 +46,7 @@ $stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
 
                   <div class="col-sm-5">
                     <select class="form-control" id="edit_category" name="category" value="<?php echo $category;?>">
-                      <option selected id="catselected">-Select-</option>
+                      <option id="catselected">-Select-</option>
 
                       <?php
                         $conn = $pdo->open();
@@ -77,7 +78,7 @@ $stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
                 <p><b>Description</b></p>
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <textarea id="editor2" name="description" rows="10" cols="80"><?php echo $name;?></textarea>
+                    <textarea id="editor2" name="description" rows="10" cols="80"><?php echo $description;?></textarea>
                   </div>
                   
                 </div>

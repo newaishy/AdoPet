@@ -70,7 +70,7 @@ $stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
                 <p><b>Description</b></p>
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <textarea id="editor2" name="description" rows="10" cols="80"><?php echo $name;?></textarea>
+                    <textarea id="editor2" name="description" rows="10" cols="80"><?php echo $description;?></textarea>
                   </div>
                   
                 </div>

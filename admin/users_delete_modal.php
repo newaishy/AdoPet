@@ -1,4 +1,18 @@
   <?php include 'includes/session.php'; ?>
+
+  <?php
+   $id = $_GET["id"];
+$conn = $pdo->open();
+$stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
+			$stmt->execute(['id'=>$id]);
+	    $user = $stmt->fetch();
+      $fname = $user['firstname'];
+      $lname = $user['lastname'];
+
+
+
+?>
+
 <?php
   if(!isset($_SESSION['admin'])){
     header('location: login.php');
@@ -15,9 +29,9 @@
 <div class="signup-form" id="delete">
           <h4 class="modal-title"><b>Deleting...</b></h4>
           <form class="form-horizontal" method="POST" action="users_delete.php">
-                <input type="hidden" class="userid" name="id">
+                <input type="hidden" class="userid" name="id" value=<?php echo $id?>>
                 <div class="text-center">
-                    <p>DELETE USER</p>
+                    <p>DELETE USER<b><?php echo " ".$fname ."". $lname;?></b> ?</p>
                     <h2 class="bold fullname"></h2>
                 </div>
 				<button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>

@@ -143,6 +143,33 @@
 </div>
 
 <script>
+  $(function(){
+
+
+  $('#select_category').change(function(){
+    var val = $(this).val();
+    if(val == 0){
+      window.location = 'products.php';
+    }
+    else{
+      window.location = 'products.php?category='+val;
+    }
+  });
+
+  $('#addproduct').click(function(e){
+    e.preventDefault();
+    getCategory();
+  });
+
+  $("#addnew").on("hidden.bs.modal", function () {
+      $('.append_items').remove();
+  });
+
+  $("#edit").on("hidden.bs.modal", function () {
+      $('.append_items').remove();
+  });
+
+});
 
 function getRow(id){
   $.ajax({

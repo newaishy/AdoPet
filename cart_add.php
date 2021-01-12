@@ -32,32 +32,35 @@
 		}
 	}
 	else{
-		if(!isset($_SESSION['cart'])){
-			$_SESSION['cart'] = array();
-		}
 
-		$exist = array();
+		echo '<script>alert("Please login first!");window.location.href = "login.php";</script>';
 
-		foreach($_SESSION['cart'] as $row){
-			array_push($exist, $row['productid']);
-		}
+		// if(!isset($_SESSION['cart'])){
+		// 	$_SESSION['cart'] = array();
+		// }
 
-		if(in_array($id, $exist)){
-			$output['error'] = true;
-			$output['message'] = 'Product already in cart';
-		}
-		else{
-			$data['productid'] = $id;
-			$data['quantity'] = $quantity;
+		// $exist = array();
 
-			if(array_push($_SESSION['cart'], $data)){
-				$output['message'] = 'Item added to cart';
-			}
-			else{
-				$output['error'] = true;
-				$output['message'] = 'Cannot add item to cart';
-			}
-		}
+		// foreach($_SESSION['cart'] as $row){
+		// 	array_push($exist, $row['productid']);
+		// }
+
+		// if(in_array($id, $exist)){
+		// 	$output['error'] = true;
+		// 	$output['message'] = 'Product already in cart';
+		// }
+		// else{
+		// 	$data['productid'] = $id;
+		// 	$data['quantity'] = $quantity;
+
+		// 	if(array_push($_SESSION['cart'], $data)){
+		// 		$output['message'] = 'Item added to cart';
+		// 	}
+		// 	else{
+		// 		$output['error'] = true;
+		// 		$output['message'] = 'Cannot add item to cart';
+		// 	}
+		// }
 
 	}
 

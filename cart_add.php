@@ -5,8 +5,8 @@
 
 	$output = array('error'=>false);
 
-	$id = $_POST['id'];
-	$quantity = $_POST['quantity'];
+	$id = $_GET['id'];
+	$quantity = $_GET['quantity'];
 
 	if(isset($_SESSION['user'])){
 		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM cart WHERE user_id=:user_id AND product_id=:product_id");

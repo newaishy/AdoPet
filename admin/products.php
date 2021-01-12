@@ -114,7 +114,7 @@
                             <td>&#36; ".number_format($row['price'], 2)."</td>
                             <td>".$counter."</td>
                             <td>
-                            <a href='products_edit_modal.php' data-id='".$row['id']."' class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i>Edit</a>   
+                            <a href='products_edit_modal.php?id=".$row['id']."'  class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i>Edit</a>   
                             
                             <a href='products_delete_modal.php' data-id='".$row['id']."' class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a> 
           

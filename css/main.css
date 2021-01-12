@@ -82,9 +82,6 @@ a#scrollUp i {
 *******Header CSS******
 **************************/
 
-.header_top {
-    background: none repeat scroll 0 0 #F0F0E9;
-}
 
 .contactinfo ul li:first-child {
     margin-left: -15px;
@@ -2409,27 +2406,3 @@ textarea {
 
     border-radius: 50%;
 }
-  .grid
-  {
-     
-  }
-
-  .box--image1  {
-    
-    
-  }
-
-  .box--image2 
-  {
-   
-  }
-
-  .box--image3 
-  {
-    
-  }
-
-  .box--image4 
-  {
-    
-  }

@@ -55,7 +55,7 @@
 		            	<div class="col-sm-6">
 		            		<img src="<?php echo (!empty($product['photo'])) ? 'images/products/'.$product['photo'] : 'images/noimage.jpg'; ?>" width="100%" class="zoom" data-magnify-src="images/large-<?php echo $product['photo']; ?>">
 		            		<br><br>
-		            		<form class="form-inline" id="productForm">
+		            		<form action="cart_add.php" class="form-inline" id="productForm">
 		            			<div class="form-group">
 			            			<div class="input-group col-sm-5">
 			            				

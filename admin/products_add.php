@@ -20,16 +20,16 @@
 			if(!empty($filename)){
 				$ext = pathinfo($filename, PATHINFO_EXTENSION);
 				$new_filename = $name.'.'.$ext;
-				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$new_filename);	
+				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/products/'.$new_filename);	
 			}
 			else{
 				$new_filename = '';
 			}
 
 			try{
-				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, name, price, photo) VALUES (:category, :name, :description, :name, :price, :photo)");
-				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'name'=>$name, 'price'=>$price, 'photo'=>$new_filename]);
-				$_SESSION['success'] = 'User added successfully';
+				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, price, photo) VALUES (:category, :name, :description, :price, :photo)");
+				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'price'=>$price, 'photo'=>$new_filename]);
+				$_SESSION['success'] = 'Product added successfully';
 
 			}
 			catch(PDOException $e){

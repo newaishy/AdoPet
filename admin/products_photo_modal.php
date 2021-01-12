@@ -1,5 +1,19 @@
 
   <?php include 'includes/session.php'; ?>
+  <?php 	
+
+$id = $_GET["id"];
+$conn = $pdo->open();
+$stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
+			$stmt->execute(['id'=>$id]);
+	    $product = $stmt->fetch();
+
+      $name = $product['name'];
+      $category = $product['category_id'];
+      $price = $product['price'];
+      $description = $product['description'];
+
+?>
 <?php
   if(!isset($_SESSION['admin'])){
     header('location: login.php');
@@ -14,9 +28,9 @@
 <div class="content-wrapper">
 <div class="container">
 <div class="signup-form" id="edit_photo">
-              <h4 class="modal-title"><b>Add New User</b></h4>
+              <h4 class="modal-title"><b>Edit User Photo</b></h4>
               <form class="form-horizontal" method="POST" action="products_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="prodid" name="id">
+                <input type="hidden" class="prodid" name="id" value=<?php echo $id?>>
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
 

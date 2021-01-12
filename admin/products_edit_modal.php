@@ -1,5 +1,23 @@
 
-  <?php include 'includes/session.php'; ?>
+  <?php include 'includes/session.php';
+  ?>
+
+<?php 	
+
+$id = $_GET["id"];
+$conn = $pdo->open();
+$stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
+			$stmt->execute(['id'=>$id]);
+	    $product = $stmt->fetch();
+
+      $name = $product['name'];
+      $category = $product['category_id'];
+      $price = $product['price'];
+      $description = $product['description'];
+
+
+?>
+
 <?php
   if(!isset($_SESSION['admin'])){
     header('location: login.php');
@@ -21,14 +39,31 @@
                   <label for="edit_name" class="col-sm-1 control-label">Name</label>
 
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" id="edit_name" name="name">
-                  </div>
+                    <input type="text" class="form-control" id="edit_name" name="name" value="<?php echo $name;?>">  </div>
 
                   <label for="edit_category" class="col-sm-1 control-label">Category</label>
 
                   <div class="col-sm-5">
-                    <select class="form-control" id="edit_category" name="category">
-                      <option selected id="catselected"></option>
+                    <select class="form-control" id="edit_category" name="category" value="<?php echo $category;?>">
+                      <option selected id="catselected">-Select-</option>
+
+                      <?php
+                        $conn = $pdo->open();
+
+                        $stmt = $conn->prepare("SELECT * FROM category");
+                        $stmt->execute();
+
+                        foreach($stmt as $crow){
+                          $selected = ($crow['id'] == $catid) ? 'selected' : ''; 
+                          echo "
+                            <option value='".$crow['id']."' ".$selected.">".$crow['name']."</option>
+                          ";
+                        }
+
+                        $pdo->close();
+                      ?>
+
+
                     </select>
                   </div>
                 </div>
@@ -36,13 +71,13 @@
                   <label for="edit_price" class="col-sm-1 control-label">Price</label>
 
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" id="edit_price" name="price">
+                    <input type="text" class="form-control" id="edit_price" name="price" value="<?php echo $price;?>">
                   </div>
                 </div>
                 <p><b>Description</b></p>
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <textarea id="editor2" name="description" rows="10" cols="80"></textarea>
+                    <textarea id="editor2" name="description" rows="10" cols="80"><?php echo $name;?></textarea>
                   </div>
                   
                 </div>

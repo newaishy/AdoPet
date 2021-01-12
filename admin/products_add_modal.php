@@ -28,6 +28,28 @@
                   <div class="col-sm-5">
                     <select class="form-control" id="category" name="category" required>
                       <option value="" selected>- Select -</option>
+                      <?php
+									
+                  $conn = $pdo->open();
+                  try{
+                  $stmt = $conn->prepare("SELECT * FROM category");
+                  $stmt->execute();
+                  foreach($stmt as $row){
+                    echo "
+                    <option value=".$row['id'].">".$row['name']."</option>
+
+                    ";                  
+                  }
+                  }
+                  catch(PDOException $e){
+                  echo "There is some problem in connection: " . $e->getMessage();
+                  }
+
+                  $pdo->close();
+
+                ?>
+
+
                     </select>
                   </div>
                 </div>

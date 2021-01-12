@@ -1,4 +1,17 @@
 <?php include 'includes/session.php'; ?>
+<?php 	
+
+$id = $_GET["id"];
+$conn = $pdo->open();
+$stmt = $conn->prepare("SELECT * FROM products WHERE id=:id");
+			$stmt->execute(['id'=>$id]);
+	    $product = $stmt->fetch();
+      $name = $product['name'];
+
+
+
+?>
+
 <?php
   if(!isset($_SESSION['admin'])){
     header('location: login.php');
@@ -15,9 +28,9 @@
 <div class="signup-form" id="delete">
           <h4 class="modal-title"><b>Deleting...</b></h4>
           <form class="form-horizontal" method="POST" action="products_delete.php">
-                <input type="hidden" class="prodid" name="id">
+                <input type="hidden" class="prodid" name="id" value=<?php echo $id?>>
                 <div class="text-center">
-                    <p>DELETE PRODUCT</p>
+                    <p>DELETE PRODUCT <b><?php echo $name;?></b> ?</p>
                     <h2 class="bold name"></h2>
                 </div>
 				<button  onclick="history.back()" type="button" class="btn btn-default btn-flat pull-left" ><i class="fa fa-close"></i>Go Back</button>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 13, 2021 at 12:42 AM
+-- Generation Time: Jan 13, 2021 at 10:40 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cart`
@@ -106,10 +106,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
 
 INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`) VALUES
 (2, 1, 1, 1),
-(4, 9, 2, 1),
-(6, 9, 6, 1),
-(7, 9, 8, 1),
-(9, 9, 28, 3);
+(10, 9, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -176,13 +173,13 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `price`, `photo`, `date_view`, `counter`) VALUES
-(2, 1, 'Collar   150cm ', 'Collar for large dogs. 150cm', 200, 'Collar   150cm _1610484354.png', '2021-01-12', 21),
-(4, 1, 'NOBBY Stainless steel bowl, anti slip 0,45 l 19,0 cm', '<p>Safe and easy to clean</p>', 55, 'NOBBY Stainless steel bowl, anti slip 0,45 l 19,0 cmLE55.png', '2021-01-12', 1),
+(2, 1, 'Collar   150cm ', 'Collar for large dogs. 150cm', 333, 'Collar   150cm _1610484354.png', '2021-01-13', 2),
+(4, 1, 'NOBBY Stainless steel bowl, anti slip 0,45 l 19,0 cm', '<p>Safe and easy to clean</p>', 55, 'NOBBY Stainless steel bowl, anti slip 0,45 l 19,0 cmLE55.png', '2021-01-13', 1),
 (5, 3, 'Automatic Bird Feeder', '<p>Dont worry about feeding your bird again.</p>\r\n\r\n<p>Fill it up only once a week</p>\r\n\r\n', 80, 'Automatic Bird FeederLE80.jpg', '2018-07-09', 3),
 (6, 1, 'Royal Canin Mini Adult 2kg', '<p>Royal Canin food for small dogs.</p>\r\n', 320, 'Royal Canin Mini Adult 2kgLE320.png', '2021-01-12', 7),
 (7, 3, 'Bird Feeding Dish', '<p>Dish for bird food. Easy to clean</p>\r\n\r\n', 40, 'Bird Feeding DishLE40.jpg', '0000-00-00', 0),
-(8, 1, 'Royal Canin Mini Puppy 2kg', '<p>Royal Canin food for small puppies.</p>\r\n', 335, 'Royal Canin Mini Puppy 2kgLE335.png', '2021-01-12', 3),
-(9, 2, 'collar7.5cm', '<p>Safety collar for cats.</p>', 95, 'collar7.5cmLE95.png', '2021-01-12', 3),
+(8, 1, 'Royal Canin Mini Puppy 2kg', '<p>Royal Canin food for small puppies.</p>\r\n', 335, 'Royal Canin Mini Puppy 2kgLE335.png', '2021-01-13', 1),
+(9, 2, 'collar7.5cm', '<p>Safety collar for cats.</p>', 95, 'collar7.5cmLE95.png', '2021-01-13', 1),
 (10, 2, 'Feed and water bowl', '<p>Feed and water bowl for cats. Easy to clean.</p>\r\n', 120, 'Feed and water bowlLE120.png', '2021-01-12', 2),
 (12, 2, 'Pets Republic Dry Shampoo Powder 500 g PinkSugar', '<p>Dry shampoo for cats.</p>\r\n', 100, 'Pets Republic Dry Shampoo Powder 500 g PinkSugar.png', '2018-05-12', 3),
 (13, 2, 'Revolution for Cats (1 Dose)', '<p>Protect your cats from fleas and ticks.</p>\r\n', 150, 'Revolution for Cats (1 Dose)LE150.png', '2018-05-12', 1),
@@ -193,7 +190,6 @@ INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `price`, `ph
 (18, 3, 'Bird water dispenser', '<p>Automatic water dispenser for your bird.</p>\r\n', 34, 'Bird water dispenserLE34.jpg', '2018-05-12', 2),
 (19, 3, 'Large bird cage', '<p>Cage for large birds.</p>\r\n', 135, 'Large bird cageLE135.jpg', '2018-05-10', 1),
 (20, 3, 'TRILL BALKUM BIRD FOOD 600G ', '<p>Quality food for your pet.</p>\r\n', 28, 'TRILL BALKUM BIRD FOOD 600G LE28.jpg', '2018-05-12', 1),
-(27, 1, 'Sergeant Spot On for 15-30 kg (1 Dose)', '<p>Protect your dog from fleas and ticks</p>', 140, 'Sergeant Spot On for 15-30 kg (1 Dose)LE140.png', '2021-01-12', 1),
 (28, 4, '3 Gallon Aquarium', '<p>Large aquarium for your fish.</p>\r\n', 450, '3 Gallon AquariumLE450.jpg', '2021-01-12', 3),
 (29, 4, 'Aquarium power filter', '<p>Filter for medium and large aquariums</p>\r\n\r\n', 345, 'Aquarium power filterLE345.jpg', '2021-01-12', 3);
 
@@ -211,20 +207,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `type` int(1) NOT NULL DEFAULT '0',
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
-  `address` text NOT NULL,
-  `contact_info` varchar(100) NOT NULL,
-  `photo` varchar(200) NOT NULL,
+  `address` text,
+  `contact_info` varchar(100) DEFAULT NULL,
+  `photo` varchar(200) DEFAULT NULL,
   `created_on` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `type`, `firstname`, `lastname`, `address`, `contact_info`, `photo`, `created_on`) VALUES
-(1, 'admin@admin.com', '$2y$10$0SHFfoWzz8WZpdu9Qw//E.tWamILbiNCX7bqhy3od0gvK5.kSJ8N2', 1, 'Ahmed', 'Ahmeden', '', '', 'thanos1.jpg', '2018-05-01'),
-(9, 'user@user.com', '$2y$10$Oongyx.Rv0Y/vbHGOxywl.qf18bXFiZOcEaI4ZpRRLzFNGKAhObSC', 0, 'Mohamed', 'Mohamed', 'EL-Wahat Road, Giza, Egypt', '01002735719', 'male2.png', '2020-05-09'),
+(1, 'admin@admin.com', '$2y$10$0SHFfoWzz8WZpdu9Qw//E.tWamILbiNCX7bqhy3od0gvK5.kSJ8N2', 1, 'Ahmed', 'MOHAMED', '', '', 'thanos1.jpg', '2018-05-01'),
+(9, 'user@user.com', '$2y$10$Oongyx.Rv0Y/vbHGOxywl.qf18bXFiZOcEaI4ZpRRLzFNGKAhObSC', 0, 'Ahmed', 'Mohamed', 'EL-Wahat Road, Giza, Egypt', '01002735719', 'male2.png', '2020-05-09'),
 (12, 'hanan@gmail.com', '$2y$10$ozW4c8r313YiBsf7HD7m6egZwpvoE983IHfZsPRxrO1hWXfPRpxHO', 0, 'Hanan', 'Ahmed', 'Talbiya', '7542214500', 'female3.jpg', '2018-07-09'),
 (13, 'mahmoud.hassanein360@gmail.com', '$2y$10$W6nHrrD7639fAQ2HkjuCTe6RoodjtuLLv/XAvuBN9ExrfvQIeS9Zu', 0, 'Mahmoud', 'Umran', '', '', '', '2021-01-08');
 

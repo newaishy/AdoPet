@@ -93,6 +93,25 @@
             <a href="users.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <?php
+                $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM adopt");
+                $stmt->execute();
+                $urow =  $stmt->fetch();
+
+                echo "<h3>".$urow['numrows']."</h3>";
+              ?>
+             
+              <p>Number of Animals</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <a href="animals.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
       </div>
       </section>
     </div>

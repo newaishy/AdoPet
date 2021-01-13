@@ -26,22 +26,25 @@
 		        			<tbody id="tbody">
 		        			</tbody>
 		        		</table>
-	        			</div>
-	        		</div>
-	        		<?php
+						</div>
+						<a href='checkout.php' class="btn btn-primary btn-lg btn-flat pull-right"><i class='fa fa-shopping-cart'></i> Checkout</a>
+					</div>
+	        		<!-- <?php
 	        			if(!isset($_SESSION['user'])){
 	        				echo "
 	        					<h4>You need to <a href='login.php'>Login</a> to checkout.</h4>
 	        				";
 	        			}
-	        		?>
-	        	</div>
+	        		?> -->
+				</div>
 	        </div>
 	      </section>
 	     
 	    </div>
 	  </div>
-  	<?php $pdo->close(); ?>
+	  <?php $pdo->close(); ?>
+	  <hr>
+
   	<?php include 'includes/footer.php'; ?>
 
 </div>

@@ -102,7 +102,7 @@
 									</ul>
           						</li>
 								
-								<li><a href="./vets.php">Vets</a></li> 
+								<!-- <li><a href="./vets.php">Vets</a></li>  -->
 								<li><a href="./about.php">About</a></li>
 								<li><a href="./contact-us.php">Contact</a></li>
 							</ul>

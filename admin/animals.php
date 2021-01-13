@@ -19,12 +19,12 @@
 
     <section class="content-header">
       <h1>
-        Product List
+        Animal List
       </h1>
       <ol class=" nav nav-bar breadcrumb">
         <li><a href="home.php">Home</a></li>
-        <li>Products</li>
-        <li class="active">Product List</li>
+        <li>Animals</li>
+        <li class="active">Animal List</li>
       </ol>
     </section>
 
@@ -55,7 +55,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="products_add_modal.php"  class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a>
+              <a href="animals_add_modal.php" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addanimal"><i class="fa fa-plus"></i> New</a>
               <div class="pull-right">
                 <form class="form-inline">
                   <div class="form-group">
@@ -88,8 +88,6 @@
                   <th>Name</th>
                   <th>Photo</th>
                   <th>Description</th>
-                  <th>Price</th>
-                  <th>Views Today</th>
                   <th>Tools</th>
                 </thead>
                 <tbody>
@@ -98,25 +96,22 @@
 
                     try{
                       $now = date('Y-m-d');
-                      $stmt = $conn->prepare("SELECT * FROM products $where");
+                      $stmt = $conn->prepare("SELECT * FROM adopt $where");
                       $stmt->execute();
                       foreach($stmt as $row){
-                        $image = (!empty($row['photo'])) ? '../images/products/'.$row['photo'] : '../images/noimage.jpg';
-                        $counter = ($row['date_view'] == $now) ? $row['counter'] : 0;
+                        $image = (!empty($row['photo'])) ? '../images/animals/'.$row['photo'] : '../images/noimage.jpg';
                         echo "
                           <tr>
                             <td>".$row['name']."</td>
                             <td>
                               <img src='".$image."' height='30px' width='30px'>
-                              <span class='pull-right'><a href='products_photo_modal.php?id=".$row['id']."' class='photo' data-toggle='modal'><i class='fa fa-edit'></i></a></span>
+                              <span class='pull-right'><a href='animals_photo_modal.php?id=".$row['id']."' class='photo' data-toggle='modal'><i class='fa fa-edit'></i></a></span>
                             </td>
-                            <td><a href='products_desc_modal.php?id=".$row['id']."' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
-                            <td>&#36; ".number_format($row['price'], 2)."</td>
-                            <td>".$counter."</td>
+                            <td><a href='animals_desc_modal.php?id=".$row['id']."' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
                             <td>
-                            <a href='products_edit_modal.php?id=".$row['id']."'  class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i>Edit</a>   
+                            <a href='animals_edit_modal.php?id=".$row['id']."'  class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i>Edit</a>   
                             
-                            <a href='products_delete_modal.php?id=".$row['id']."' class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a> 
+                            <a href='animals_delete_modal.php?id=".$row['id']."' class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a> 
           
                             </td>
                           </tr>
@@ -149,10 +144,10 @@
   $('#select_category').change(function(){
     var val = $(this).val();
     if(val == 0){
-      window.location = 'products.php';
+      window.location = 'animals.php';
     }
     else{
-      window.location = 'products.php?category='+val;
+      window.location = 'animals.php?category='+val;
     }
   });
 
@@ -161,7 +156,7 @@
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'products_row.php',
+    url: 'animals_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){

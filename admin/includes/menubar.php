@@ -18,7 +18,7 @@
                 
                 <li><a href="./users.php">Users</a></li>
 
-				<li><a href="./vets.php">Vets</a></li>
+				<!-- <li><a href="./vets.php">Vets</a></li> -->
                 
                 <li><a href="./animals.php">Animals</a></li>
 

@@ -34,9 +34,9 @@
 	        		</div>
 		            <div class="row">
 		            	<div class="col-sm-6">
-		            		<img src="<?php echo (!empty($pet['photo'])) ? 'images/pets/'.$pet['photo'] : 'images/noimage.jpg'; ?>" width="100%" class="zoom" data-magnify-src="images/large-<?php echo $pet['photo']; ?>">
+		            		<img src="<?php echo (!empty($pet['photo'])) ? 'images/animals/'.$pet['photo'] : 'images/noimage.jpg'; ?>" width="100%" class="zoom" data-magnify-src="images/large-<?php echo $pet['photo']; ?>">
 		            		<br><br>
-		            		<form class="form-inline" id="petForm">
+		            		<form class="form-inline" id="petForm" action="unavailable.php">
 		            			<div class="form-group">
 			            			<button type="submit" class="btn btn-primary btn-lg btn-flat"></i>Adopt</button>
 			            		</div>
